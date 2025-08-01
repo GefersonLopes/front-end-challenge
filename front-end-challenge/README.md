@@ -1,6 +1,6 @@
-# XXXXXXXXXXX 🚀
+# Apiki 🚀
 
-> Aplicação React de XXXXXXX.
+> Aplicação React de Apiki.
 
 [![CI](https://github.com/seu-usuario/control361/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/seu-usuario/control361/actions/workflows/ci-cd.yml)
 [![Docker](https://img.shields.io/badge/docker-ready-blue)](#docker)
@@ -10,7 +10,7 @@
 
 ## 📋 Sumário
 
-- [XXXXXXXXXXX 🚀](#xxxxxxxxxxx-)
+- [Apiki 🚀](#apiki-)
   - [📋 Sumário](#-sumário)
   - [🧐 Sobre](#-sobre)
   - [✨ Funcionalidades](#-funcionalidades)
@@ -29,17 +29,14 @@
 
 ## 🧐 Sobre
 
-Este repositório contém a aplicação **Control361**, desenvolvida em React + TypeScript, gerenciador global de estado com Zustand, formulários com React Hook Form + Zod e exibição de marcadores no mapa via Google Maps API.
+Este repositório contém a aplicação **Apiki**, desenvolvida em React + TypeScript, gerenciador global de estado com Zustand, formulários com React Hook Form + Zod.
 
 ---
 
 ## ✨ Funcionalidades
 
-- Filtro por status (rastreados / outros).
-- Busca por placa ou frota.
-- Mapas interativos com pins e infowindows.
-- Estado global via Zustand.
-- Validação de formulários com Zod.
+- Listagem das notícias.
+- Visualização de detalhes de cada notícia.
 
 ---
 
@@ -57,18 +54,18 @@ Este repositório contém a aplicação **Control361**, desenvolvida em React + 
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/GefersonLopes/control361
-   cd control361
+   git clone https://github.com/GefersonLopes/front-end-challenge
+   cd front-end-challenge
    ```
 2. Instale as dependências:
    ```bash
-   npm ci
+   npm i
    ```
 3. Crie um arquivo `.env` na raiz, copiando de `.env.example`:
    ```bash
    cp .env.example .env
    ```
-4. Ajuste as variáveis de ambiente conforme necessário.
+4. Ajuste as variáveis de ambiente conforme necessário. (Deixei já o padrão que será funcional)
 
 ---
 
@@ -77,15 +74,10 @@ Este repositório contém a aplicação **Control361**, desenvolvida em React + 
 As seguintes variáveis devem estar definidas no seu `.env`:
 
 ```dotenv
-VITE_GOOGLE_MAPS_API_KEY=...   # Chave da Google Maps JavaScript API
-VITE_API_CLIENT_KEY=...        # Token de autenticação do client
-VITE_BASE_URL_API_CLIENT=...   # URL base da API backend
-VITE_GOOGLE_MAPS_COORDINATES_URL="https://www.google.com/maps/search/?api=1&query="
+VITE_BASE_URL_API_CLIENT=https://blog.apiki.com/wp-json/wp/v2/
+VITE_CELLPHONE_NUMBER=5571996063783
+VITE_LINKEDIN_ACCOUNT=algeferson
 ```
-
-> Mantenha o `.env` fora do controle de versão!
-
----
 
 ## 🧑‍💻 Desenvolvimento Local
 
@@ -125,10 +117,9 @@ services:
     ports:
       - "5173:5173"
     environment:
-      - VITE_GOOGLE_MAPS_API_KEY=${VITE_GOOGLE_MAPS_API_KEY}
-      - VITE_API_CLIENT_KEY=${VITE_API_CLIENT_KEY}
-      - VITE_BASE_URL_API_CLIENT=${VITE_BASE_URL_API_CLIENT}
-      - VITE_GOOGLE_MAPS_COORDINATES_URL=${VITE_GOOGLE_MAPS_COORDINATES_URL}
+      - VITE_BASE_URL_API_CLIENT={{ VITE_BASE_URL_API_CLIENT }}
+      - VITE_CELLPHONE_NUMBER={{ VITE_CELLPHONE_NUMBER }}
+      - VITE_LINKEDIN_ACCOUNT={{ VITE_LINKEDIN_ACCOUNT }}
 ```
 
 Para rodar:
@@ -182,7 +173,7 @@ Defina as mesmas variáveis de ambiente no painel Vercel (Production & Preview).
 ## 🗂️ Estrutura de Pastas
 
 ```
-XXXXXXXXXXX/
+Apiki/
 ├── .env.example
 ├── Dockerfile
 ├── Dockerfile.dev
