@@ -3,12 +3,12 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { Link, useParams } from "react-router-dom";
 
 import AsyncFallback from "../components/layout/AsyncFallback";
+import FallbackSpinner from "../components/layout/FallbackSpinner";
 import Image from "../components/ui/Img";
 import { usePost } from "../hooks/usePost";
 import { extractYoastDescription } from "../utils/generics/extractYoastDescription";
 import { formatDateTimeWithRelative } from "../utils/generics/formatDate";
 import stripCaptionWidth from "../utils/generics/RemoveStyle";
-import FallbackSpinner from "../components/layout/FallbackSpinner";
 
 const ProfileCard = lazy(() => import("../components/layout/ProfileCard"));
 

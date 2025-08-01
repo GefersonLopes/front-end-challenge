@@ -1,8 +1,9 @@
 import { lazy, Suspense } from "react";
+
 import AsyncFallback from "../components/layout/AsyncFallback";
+import FallbackSpinner from "../components/layout/FallbackSpinner";
 import Button from "../components/ui/Button";
 import { useInfinitePosts } from "../hooks/useInfinitePosts";
-import FallbackSpinner from "../components/layout/FallbackSpinner";
 
 const CardItems = lazy(() => import("../components/layout/CardItems"));
 const MainNews = lazy(() => import("../components/layout/MainNews"));
