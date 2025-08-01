@@ -32,6 +32,7 @@
     "control361": "file:",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.12.1",
+    "graphql-request": "^7.2.0",
     "i18next": "^25.1.2",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.535.0",
