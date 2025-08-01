@@ -1,8 +1,11 @@
+import { lazy, Suspense } from "react";
 import AsyncFallback from "../components/layout/AsyncFallback";
-import CardItems from "../components/layout/CardItems";
-import MainNews from "../components/layout/MainNews";
 import Button from "../components/ui/Button";
 import { useInfinitePosts } from "../hooks/useInfinitePosts";
+import FallbackSpinner from "../components/layout/FallbackSpinner";
+
+const CardItems = lazy(() => import("../components/layout/CardItems"));
+const MainNews = lazy(() => import("../components/layout/MainNews"));
 
 function HomePage() {
   const {
@@ -33,11 +36,17 @@ function HomePage() {
 
               return (
                 <>
-                  {firstPost && <MainNews key={firstPost.id} {...firstPost} />}
+                  {firstPost && (
+                    <Suspense fallback={<FallbackSpinner />}>
+                      <MainNews key={firstPost.id} {...firstPost} />
+                    </Suspense>
+                  )}
 
                   <div className="home__grid mt-4">
                     {otherPosts.map((post) => (
-                      <CardItems key={post.id} {...post} />
+                      <Suspense key={post.id} fallback={<FallbackSpinner />}>
+                        <CardItems key={post.id} {...post} />
+                      </Suspense>
                     ))}
                   </div>
                 </>

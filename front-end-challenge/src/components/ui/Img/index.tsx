@@ -5,6 +5,8 @@ export interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   alt: string;
   className?: string;
   fallbackSrc?: string;
+  srcSet?: string;
+  sizes?: string;
 }
 
 export const Image: React.FC<ImageProps> = ({
@@ -14,6 +16,8 @@ export const Image: React.FC<ImageProps> = ({
   fallbackSrc = "/assets/img/placeholder.png",
   onError,
   loading = "lazy",
+  srcSet,
+  sizes,
   ...rest
 }) => {
   const [currentSrc, setCurrentSrc] = useState(src || fallbackSrc);
@@ -32,6 +36,8 @@ export const Image: React.FC<ImageProps> = ({
       loading={loading}
       className={className}
       onError={handleError}
+      srcSet={srcSet}
+      sizes={sizes}
       {...rest}
     />
   );
