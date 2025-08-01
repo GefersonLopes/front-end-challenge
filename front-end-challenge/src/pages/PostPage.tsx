@@ -55,13 +55,16 @@ const PostPage = () => {
             }}
           />
         </article>
-        <article className="post-detail mx-auto max-w-7xl">
+        <article className="post-detail flex flex-col items-start w-full mt-8">
           <ProfileCard
             imageUrl={post?.embedded?.author[0]?.avatar_urls?.["96"] || ""}
             name={post?.embedded?.author[0]?.name || "Autor Desconhecido"}
             description={
               extractYoastDescription(post?.embedded?.author[0]?.yoast_head) ||
               "Descrição não disponível"
+            }
+            secundaryDescription={
+              post?.embedded?.author[0]?.description || "Nenhum contéudo encontrado"
             }
           />
         </article>
